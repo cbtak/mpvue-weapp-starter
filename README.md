@@ -1,13 +1,12 @@
 # mpvue-weapp-starter
 
-> 基于mpvue构建的小程序项目快速开发模块
+> 基于mpvue构建的小程序项目快速开发模板
 
 ## Build Setup
 
 ``` bash
 # 初始化项目
-vue init mpvue/mpvue-quickstart myproject
-cd myproject
+npm i
 
 # 安装依赖
 yarn
