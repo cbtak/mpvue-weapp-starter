@@ -21,7 +21,8 @@
     "dev": "node build/dev-server.js wx",
     "start": "npm run dev",
     "build": "node build/build.js wx",
-    "lint": "eslint --ext .js,.vue src"
+    "lint": "eslint --ext .js,.vue src",
+    "analyz": "NODE_ENV=production npm_config_report=true npm run build"
   },
   "dependencies": {
     "@cbtak/nothing": "^1.0.16",
