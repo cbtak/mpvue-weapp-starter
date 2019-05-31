@@ -14,10 +14,10 @@ const context = {
       state.pageApps = pageApps || {}
     },
     ADD_PAGE_APP: (state, pageApp) => {
-      state.pageApps[pageApp.$options.__file.replace('src/', '').replace('/index.vue', '/main')] = pageApp
+      state.pageApps[pageApp.$options.__file.replace('src/', '').replace('index.vue', 'main')] = pageApp
     },
     DELETE_PAGE_APP: (state, pageApp) => {
-      delete state.pageApps[pageApp.$options.__file.replace('src/', '').replace('/index.vue', '/main')]
+      delete state.pageApps[pageApp.$options.__file.replace('src/', '').replace('index.vue', 'main')]
     }
   },
 
