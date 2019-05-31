@@ -6,9 +6,9 @@ import Env from './Env'
 
 // 全局Vue实例，wx.$app
 const {$app, $app: {$store, $storeHelper}} = global.mpvue
-
+const _getPage = () => getCurrentPages()[getCurrentPages().length - 1]
 // 页面级Vue实例，由页面初始化时绑定当前页面vue实例
-const _getPageApp = () => wx.$pageApp
+const _getPageApp = () => $storeHelper.modules.context.getters.pageApps[_getPage().route] // wx.$pageApp
 
 /**
  * 页面上下文对象
@@ -16,7 +16,7 @@ const _getPageApp = () => wx.$pageApp
 const pageContext = {}
 nothing.defineGetter(pageContext, [
   {name: '$app', value: () => _getPageApp()},
-  {name: '$page', value: () => getCurrentPages()[getCurrentPages().length - 1]}
+  {name: '$page', value: () => _getPage()}
 ])
 
 /**
